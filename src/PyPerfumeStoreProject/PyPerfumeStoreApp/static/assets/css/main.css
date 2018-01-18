@@ -217,7 +217,7 @@ a:focus{
 }
 
 .toggled{
-	display: none;	
+	display: none;
 }
 
 #menubar{
@@ -268,7 +268,7 @@ header .logo{
 	left: 20px;
 	background-color: #f5f5f5;
 	padding: 30px 15px;
-	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5); 
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
 	position: absolute;
 	z-index: -1;
 	line-height: 20px;
@@ -343,7 +343,7 @@ header .logo{
 }
 
 .navigation li .submenu li {
-	padding-left: 8px; 
+	padding-left: 8px;
 	line-height: 20px;
 	display: block;
 }
@@ -598,7 +598,7 @@ h3{
 }
 
 .heading a{
-	color: #7a7a7a;	
+	color: #7a7a7a;
 	display: inline-block;
 	font-family: "Arial", sans-serif;
 	font-size: 13px;
@@ -868,7 +868,7 @@ h3{
 .gallery a.shopnow{
 	font-family: "Open Sans", sans-serif;
 	font-size: 13px;
-	color: #999; 
+	color: #999;
 	display: inline-block;
 	width: 109px;
 	line-height: 25px;
@@ -898,7 +898,7 @@ h3{
 
 .gallery .leadingbrand span{
 	background-color: #e2bd65;
-	color: #fff; 
+	color: #fff;
 	display: inline-block;
 	width: 55px;
 }
@@ -1218,17 +1218,17 @@ h3{
 	background-color: #b1d1c9;
 }
 
-#home3 .product:hover .price, 
+#home3 .product:hover .price,
 #home3 .blog-item:hover a{
-	background-color: #b1d1c9;	
+	background-color: #b1d1c9;
 }
 
 #home3 .gallery h6{
-	color: #b1d1c9;	
+	color: #b1d1c9;
 }
 
 #home3 .gallery .leadingbrand span{
-	background-color: #b1d1c9;	
+	background-color: #b1d1c9;
 }
 
 #home3 .gallery .leadingbrand{
@@ -1241,25 +1241,25 @@ h3{
 
 #home3 .price,
 #home3 .blog-item a{
-	color: #b1d1c9;	
+	color: #b1d1c9;
 }
 
 #home3 footer h5::after{
 	background-color: #b1d1c9;
 }
 
-#home3 .menubar-tools .search a:hover, 
+#home3 .menubar-tools .search a:hover,
 #home3 .menubar-tools .cart a:hover{
-	color: #b1d1c9;	
+	color: #b1d1c9;
 }
 
 #home4 .sidebanners a{
-	transition: all 0.3s ease;	
+	transition: all 0.3s ease;
 }
 
 #home4 .sidebanners:hover{
 	transform: scale(1.03);
-	transition: all 0.3s ease;	
+	transition: all 0.3s ease;
 }
 
 #home4 .sidebanners:not(last-child){
@@ -1280,7 +1280,7 @@ h3{
 
 .breadcrumbs{
 	background-image: url("https://placehold.it/1920x246");
-	background-size: cover; 
+	background-size: cover;
 	margin-bottom: 50px;
 }
 
@@ -1385,7 +1385,7 @@ h3{
 }
 
 .accordion-option:not(:last-child):not(.opened){
-	border-bottom: 1px solid #e5e5e5;	
+	border-bottom: 1px solid #e5e5e5;
 }
 
 #sidebar .category{
@@ -1504,7 +1504,7 @@ input[type='checkbox']:checked:after{
 	width: 14px;
 	height: 14px;
 	border-radius: 0;
-	border: none;	
+	border: none;
 }
 
 #slider-range .ui-slider-handle:nth-child(2){
@@ -1716,7 +1716,7 @@ input[type='checkbox']:checked:after{
 .detail .controls{
 	position: static;
 	padding: 0;
-	background: transparent;	
+	background: transparent;
 }
 
 .mainlist .controls li,
@@ -1737,7 +1737,7 @@ input[type='checkbox']:checked:after{
 	position: absolute;
 	margin: auto;
 	right: 0;
-	left: 0;	
+	left: 0;
 	transition: all 0.2s ease;
 }
 
@@ -1786,7 +1786,7 @@ input[type='checkbox']:checked:after{
 	background-color: #e5e5e5;
 	font-family: "Arial", sans-serif;
 	font-size: 14px;
-	color: #464646;	
+	color: #464646;
 }
 
 .alt-breadbrumbs a:hover{
@@ -2304,7 +2304,7 @@ footer h5::after{
 .businesshours{
 	font-family: "Arial", sans-serif;
 	font-size: 13px;
-	margin-top: 
+	margin-top:
 }
 
 .businesshours p{
@@ -2392,7 +2392,7 @@ footer .contact a{
 	}
 
 	#slider .rslides_nav i{
-		font-size: 2em;	
+		font-size: 2em;
 		top: -12px;
 	}
 }

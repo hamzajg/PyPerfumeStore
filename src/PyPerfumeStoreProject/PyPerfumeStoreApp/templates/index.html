@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="PyPerfumeStore">
+<html ng-app="PyPerfumeStore" ng-controller="MainCtrl">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -14,33 +14,54 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,900" rel="stylesheet">
 </head>
 
-<body id="home4">
-
+<body id="home4" ng-cloak>
+	<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><span class="fa fa-angle-up"></span></a>
 	<!-- Application content -->
-	<div id="controls">
+	<div id="controls" ng-if="!currentPath.includes('login')">
 	    <aside ng-include="'static/views/header.html'" id="sidebar"></aside>
 	</div>
 
-	<div class="view-container" ui-view-container>
-	    <section ng-view id="content" autoscroll="false"></section>
-	</div>
-	<section ng-include="'static/views/footer.html'" id="footer"></section>
+  <div class="view-container" ui-view-container>
+      <section ng-view id="content" autoscroll="false"></section>
+  </div>
+  <section ng-include="'static/views/footer.html'" id="footer"></section>
+
 	<!-- Page Loader -->
 	<!-- <page-loader></page-loader> -->
 	<!-- JS libs -->
 	<script src="static/assets/libs/jquery/jquery.js"></script>
-
-	<!-- Angular libs -->
-	<script src="static/bower_components/angular/angular.js"></script>
-	<script src="static/bower_components/angular-route/angular-route.js"></script>
-
-
+	<script src="static/assets/libs/jquery-ui/jquery-ui.min.js"></script>
 	<script src="static/assets/libs/bootstrap/js/bootstrap.min.js"></script>
 	<script src="static/assets/libs/rslides/responsiveslides.min.js"></script>
-	<script src="static/assets/libs/jquery-ui/jquery-ui.min.js"></script>
 	<script src="static/assets/libs/slick/slick.min.js"></script>
+	<script>
+      $(document).ready(function(){
+          $(window).scroll(function () {
+                  if ($(this).scrollTop() > 50) {
+                      $('#back-to-top').fadeIn();
+                  } else {
+                      $('#back-to-top').fadeOut();
+                  }
+              });
+              // scroll body to 0px on click
+              $('#back-to-top').click(function () {
+                  $('#back-to-top').tooltip('hide');
+                  $('body,html').animate({
+                      scrollTop: 0
+                  }, 800);
+                  return false;
+              });
+
+              $('#back-to-top').tooltip('show');
+      });
+  </script>
+	<!-- Angular libs -->
+	<script src="static/bower_components/angular/angular.min.js"></script>
+	<script src="static/bower_components/angular-route/angular-route.min.js"></script>
+
 	<script src="static/assets/js/main.js"></script>
 	<!-- Angular App -->
 	<script src="static/assets/js/app.js"></script>
+	<script src="static/assets/js/controllers/main.js"></script>
 </body>
 </html>
