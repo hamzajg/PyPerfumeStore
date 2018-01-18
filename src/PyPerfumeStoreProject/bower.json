@@ -8,11 +8,14 @@
   "main": "",
   "license": "MIT",
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
     "PyPerfumeStoreApp/static/bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.8",
+    "angular-route": "^1.6.8"
+  }
 }
