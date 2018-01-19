@@ -1,4 +1,7 @@
 django
+mysql-python
+pymysql
+mysqlclient
 djangorestframework
 markdown
 django-filter

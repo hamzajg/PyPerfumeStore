@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/hamzajguerim/Documents/PyPerfumeStore"
+set -gx VIRTUAL_ENV "/root/PycharmProjects/PyPerfumeStore"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

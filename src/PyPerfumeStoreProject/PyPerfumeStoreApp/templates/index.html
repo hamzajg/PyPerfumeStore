@@ -11,23 +11,41 @@
 	<link rel="stylesheet" href="static/assets/libs/rslides/responsiveslides.css">
 	<link rel="stylesheet" href="static/assets/libs/slick/slick.css">
 	<link rel="stylesheet" href="static/assets/css/main.css">
+  <link rel="stylesheet" href="static/bower_components/angular-loading-bar/build/loading-bar.css" />
+  <link rel="stylesheet" href="static/bower_components/angular-page-loader/dist/angular-page-loader.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,900" rel="stylesheet">
+	<style>
+		.back-to-top {
+				 opacity: .85;
+				border-radius: 0px;
+				cursor: pointer;
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				display: none;
+		}
+	</style>
+	<script src="static/bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript">
+    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+  </script>
 </head>
 
 <body id="home4" ng-cloak>
-	<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><span class="fa fa-angle-up"></span></a>
+	<a id="back-to-top" href="#" class="btn btn-warning btn-lg back-to-top" role="button"><i class="zmdi zmdi-chevron-up"></i></a>
 	<!-- Application content -->
-	<div id="controls" ng-if="!currentPath.includes('login')">
+	<div id="controls">
 	    <aside ng-include="'static/views/header.html'" id="sidebar"></aside>
 	</div>
 
   <div class="view-container" ui-view-container>
       <section ng-view id="content" autoscroll="false"></section>
   </div>
-  <section ng-include="'static/views/footer.html'" id="footer"></section>
 
+	<section ng-include="'static/views/footer.html'" id="footer"></section>
 	<!-- Page Loader -->
-	<!-- <page-loader></page-loader> -->
+	<page-loader></page-loader>
+
 	<!-- JS libs -->
 	<script src="static/assets/libs/jquery/jquery.js"></script>
 	<script src="static/assets/libs/jquery-ui/jquery-ui.min.js"></script>
@@ -55,11 +73,16 @@
               $('#back-to-top').tooltip('show');
       });
   </script>
-	<!-- Angular libs -->
-	<script src="static/bower_components/angular/angular.min.js"></script>
-	<script src="static/bower_components/angular-route/angular-route.min.js"></script>
-
 	<script src="static/assets/js/main.js"></script>
+
+	<!-- Angular libs -->
+  <script src="static/bower_components/lodash/dist/lodash.min.js"></script>
+	<script src="static/bower_components/angular-route/angular-route.min.js"></script>
+  <script src="static/bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="static/bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="static/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="static/bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+  <script src="static/bower_components/angular-page-loader/dist/angular-page-loader.min.js"></script>
 	<!-- Angular App -->
 	<script src="static/assets/js/app.js"></script>
 	<script src="static/assets/js/controllers/main.js"></script>

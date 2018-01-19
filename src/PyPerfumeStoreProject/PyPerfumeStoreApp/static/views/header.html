@@ -7,7 +7,7 @@
 					<div class="pull-right">
 						<div class="login">
 							<i class="zmdi zmdi-account"></i>
-							<a href="#!/login">Login</a>
+							<a href="/login">Login</a>
 						</div>
 						<div class="lang pos-r toggler">
 							<a href="#">
@@ -51,7 +51,7 @@
 			</div>
 		</div>
 		<div class="logo pull-left">
-			<a href="#">
+			<a href="/">
 				<img src="http://placehold.it/119x26" alt="Logo">
 			</a>
 			<p>Premium Bike Store</p>
@@ -198,7 +198,7 @@
 			</ul>
 		</nav>
 	</div>
-	<div id="slider" class="container">
+	<div id="slider" class="container" ng-if="!currentPath.includes('login')">
 		<div class="row">
 			<div class="col-lg-9 col-md-12">
 				<ul class="rslides-top">

@@ -8,7 +8,7 @@
  * Controller of the saitunaApp
  */
 app
-  .controller('MainCtrl', function ($scope,  $rootScope, $location, $interval) {
+  .controller('MainCtrl', ['$scope', '$rootScope', '$route', '$routeParams', '$location', function ($scope,  $rootScope, $route, $routeParams, $location) {
 
     $scope.currentPath = $location.path();
-  });
+  }]);
