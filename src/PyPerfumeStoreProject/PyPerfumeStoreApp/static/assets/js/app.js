@@ -19,6 +19,8 @@ var app = angular.module('PyPerfumeStore', ['ngRoute', 'ngAnimate', 'ngSanitize'
     				templateUrl : 'static/views/home.html',
     			}).when('/login', {
     				templateUrl : 'static/views/login.html'
+    			}).when('/administration/', {
+    				templateUrl : 'static/views/admin/dashboard.html'
     			}).otherwise({
           redirectTo: '/'
         });
