@@ -20,11 +20,11 @@ class ArticleUnit(models.Model):
 
 class Provider(models.Model):
     ProviderId = models.AutoField(primary_key=True)
-    ArticleFullName = models.CharField(max_length=50)
-    ArticleAddress1 = models.CharField(max_length=80)
-    ArticleAddress2 = models.CharField(max_length=80)
-    ArticlePhoneNum1 = models.CharField(max_length=10)
-    ArticlePhoneNum2 = models.CharField(max_length=10)
+    ProviderFullName = models.CharField(max_length=50)
+    ProviderAddress1 = models.CharField(max_length=80)
+    ProviderAddress2 = models.CharField(max_length=80)
+    ProviderPhoneNum1 = models.CharField(max_length=10)
+    ProviderPhoneNum2 = models.CharField(max_length=10)
 
     class Meta:
         db_table = "Provider"
@@ -34,20 +34,24 @@ class Article(models.Model):
     ArticleRef = models.CharField(max_length=50)
     ArticleName = models.CharField(max_length=50)
     ArticlePrice = models.FloatField()
-    ArticleUnit = models.ForeignKey(ArticleUnit, on_delete=models.CASCADE, null=True)
-    ArticleType = models.ForeignKey(ArticleType, on_delete=models.CASCADE, null=True)
-    Provider = models.ForeignKey(Provider, on_delete=models.CASCADE, null=True)
+    ArticleQte = models.FloatField()
+    ArticleMinQte = models.FloatField()
+    ArticleUnit = models.ForeignKey(ArticleUnit, related_name='ArticleUnit', on_delete=models.CASCADE, null=True)
+    ArticleType = models.ForeignKey(ArticleType, related_name='ArticleType', on_delete=models.CASCADE, null=True)
+    Provider = models.ForeignKey(Provider, related_name='Provider', on_delete=models.CASCADE, null=True)
+    ArticleCreationDate = models.DateTimeField(auto_now_add=True, blank=True)
 
     class Meta:
         db_table = "Article"
 
-
 class StoreInfo(models.Model):
     storeInfoId = models.AutoField(primary_key=True)
     storeName = models.CharField(max_length=50)
+    storeWebAppColor = models.CharField(max_length=10)
 
     class Meta:
         db_table = "StoreInfo"
+
 class ProductType(models.Model):
     productTypeId = models.AutoField(primary_key=True)
     productTypeName = models.CharField(max_length=80)

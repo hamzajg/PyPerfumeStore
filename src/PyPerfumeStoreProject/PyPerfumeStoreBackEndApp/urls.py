@@ -4,4 +4,5 @@ from PyPerfumeStoreBackEndApp import views
 urlpatterns = [
     path('', views.Index.as_view(), name='management_index'),
     path('api/article', views.ArticleList.as_view()),
+    path('api/provider', views.ProviderList.as_view()),
 ]
