@@ -24,8 +24,8 @@
         var date = new Date();
         var year = date.getFullYear();
         var main = {
-            brand: 'Material',
-            name: 'Lisa',
+            brand: 'PyPerfumeStore',
+            name: 'Admin',
             year: year,
             layout: 'wide',                                 // String: 'boxed', 'wide'
             menu: 'vertical',                               // String: 'horizontal', 'vertical'

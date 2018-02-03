@@ -1,6 +1,7 @@
 from django.urls import path
-from PyPerfumeStoreBackEndApp.views import Index
+from PyPerfumeStoreBackEndApp import views
 
 urlpatterns = [
-    path('', Index.as_view(), name='management_index'),
+    path('', views.Index.as_view(), name='management_index'),
+    path('api/article', views.ArticleList.as_view()),
 ]

@@ -1,0 +1,79 @@
+<div class="page page-form" data-ng-controller="NewArticleCtrl">
+    <div class="row ui-section">
+        <div class="col-lg-8 clearfix">
+            <h2 class="section-header">New Article</h2>
+        </div>
+        <div class="col-md-12">
+            <section class="panel panel-default panel-labeld">
+                <div class="panel-body form-validation" ng-cloak>
+                  <form name="new_article_form" class="form-horizontal form-validation" data-ng-submit="submitForm()">
+                    <div id="toolbar">
+                      <md-button class="md-raised btn-w-md md-accent" ng-click="newArticle()"><i class="zmdi zmdi-plus"></i> New</md-button>
+                      <md-button class="md-raised btn-w-md md-primary" ng-click="saveArticle(article)"><i class="zmdi zmdi-save"></i> Save</md-button>
+                      <md-button class="md-raised btn-w-md md-warn" ng-click="deleteArticle(artilce.ArticleId)"><i class="zmdi zmdi-delete"></i> Delete</md-button>
+
+                        <div class="callout callout-info no-margin-bottom">
+                            The loading bar will show at the top of the page.
+                        </div>
+                    </div>
+                    <div layout="column" ng-cloak class="md-inline-form inputdemoBasicUsage">
+                      <div layout-padding>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>Reference</label>
+                                <input ng-model="article.ArticleRef">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Name</label>
+                                <input ng-model="article.ArticleName">
+                            </md-input-container>
+                            <md-input-container flex>
+                              <label>State</label>
+                              <md-select ng-model="article.ArticleType">
+                                  <md-option ng-repeat="at in articleTypes" value="{{at.ArticleTypeId}}">
+                                      {{at.ArticleTypeName}}
+                                  </md-option>
+                              </md-select>
+                          </md-input-container>
+                          <md-input-container flex>
+                              <label>Price</label>
+                              <input ng-model="article.ArticlePrice">
+                          </md-input-container>
+                        </div>
+                      </div>
+                    </div>
+                    <div layout="column" ng-cloak class="md-inline-form inputdemoBasicUsage">
+                      <div layout-padding>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                              <label>Unit</label>
+                              <md-select ng-model="article.ArticleUnit">
+                                  <md-option ng-repeat="u in Units" value="{{u.UniId}}">
+                                      {{u.UnitName}}
+                                  </md-option>
+                              </md-select>
+                          </md-input-container>
+                            <md-input-container flex>
+                                <label>Qte</label>
+                                <input ng-model="article.ArticleQte">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Min. Qte</label>
+                                <input ng-model="article.ArticleMinQte">
+                            </md-input-container>
+                            <md-input-container flex>
+                              <label>Provider</label>
+                              <md-select ng-model="article.ArticleProvider">
+                                  <md-option ng-repeat="p in Providers" value="{{p.ProviderId}}">
+                                      {{p.ProviderName}}
+                                  </md-option>
+                              </md-select>
+                          </md-input-container>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+            </section>
+        </div>
+    </div>
