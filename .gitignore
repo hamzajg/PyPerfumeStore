@@ -99,3 +99,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Local virtualenv and database
+bin/
+include/
+pip-selfcheck.json
+pyvenv.cfg
+*.sqlite3
