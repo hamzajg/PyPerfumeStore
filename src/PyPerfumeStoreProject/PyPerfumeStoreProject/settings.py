@@ -11,21 +11,26 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import secrets
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'l#=55v@6ms$39-92x&1urwle=(ym6px*%1(@oy(wsc6r667(5c'
+# The secret key must come from the environment in production. The fallback is
+# random, so a development server never runs with a key that is in the source.
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY") or secrets.token_urlsafe(50)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+    if host.strip()
+]
 
 
 # Application definition
@@ -73,18 +78,28 @@ WSGI_APPLICATION = 'PyPerfumeStoreProject.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+#
+# SQLite by default, so a checkout runs without a database server. Set
+# DJANGO_DB_ENGINE=mysql to use the schema this project was written for; the
+# credentials then come from the environment, never from this file.
 
 DATABASES = {
-'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'perfume_store_db',
-        'USER': 'root',
-        'PASSWORD': 'lamppass',
-        'HOST': '/opt/lampstack-7.1.4-0/mysql/tmp/mysql.sock',
-        'PORT': '3306',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.environ.get("DJANGO_DB_PATH", os.path.join(BASE_DIR, "db.sqlite3")),
     }
 }
+
+if os.environ.get("DJANGO_DB_ENGINE") == "mysql":
+    DATABASES["default"] = {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": os.environ.get("DJANGO_DB_NAME", "perfume_store_db"),
+        "USER": os.environ.get("DJANGO_DB_USER", "root"),
+        "PASSWORD": os.environ.get("DJANGO_DB_PASSWORD", ""),
+        "HOST": os.environ.get("DJANGO_DB_HOST", "127.0.0.1"),
+        "PORT": os.environ.get("DJANGO_DB_PORT", "3306"),
+    }
 
 
 # Password validation
@@ -115,7 +130,6 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
 
 USE_TZ = True
 
@@ -130,3 +144,5 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
