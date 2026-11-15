@@ -35,7 +35,13 @@ PascalCase field names preserved from the original schema:
 ## API surface
 
 Only the read/create slice exists under `/management/api/`:
-`GET/POST provider`, `GET/POST article` (article list nests its provider).
+`GET/POST provider`, `GET/POST article` (article list nests its provider),
+plus `POST assistant/ask` — a deterministic read-only copilot
+(`PyPerfumeStoreBackEndApp/assistant.py`) answering catalog questions:
+counts, article/provider search, and low-stock reports
+(`ArticleQte <= ArticleMinQte`). Response `{intent, answer, data}`; no
+LLM — the intent contract is the stable tool surface for a future model
+(ADR 0002). Write intents are deliberately absent.
 No auth, pagination, filtering, detail routes, update, or delete — the
 README states this is intentional current scope.
 

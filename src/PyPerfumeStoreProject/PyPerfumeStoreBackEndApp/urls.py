@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.Index.as_view(), name='management_index'),
     path('api/article', views.ArticleList.as_view()),
     path('api/provider', views.ProviderList.as_view()),
+    path('api/assistant/ask', views.AssistantAsk.as_view()),
 ]

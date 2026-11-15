@@ -51,6 +51,7 @@ no update/delete — read/create slice only):
 |---|---|---|
 | GET/POST | `/management/api/provider` | list / create providers |
 | GET/POST | `/management/api/article` | list (provider nested) / create articles |
+| POST | `/management/api/assistant/ask` | `{question}` → `{intent, answer, data}` — deterministic read-only catalog copilot (counts, article/provider search, low-stock) |
 | GET | `/management/` | back-office HTML page |
 | GET | `/` | shop HTML page |
 
